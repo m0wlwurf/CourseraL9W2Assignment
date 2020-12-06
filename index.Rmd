@@ -1,0 +1,27 @@
+---
+title: "Coursera Less 9 W2 Assignment"
+author: "Felix M0wlwurf"
+date: "6 12 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r load.libs}
+library(leaflet)
+library(dplyr)
+```
+
+```{r Map + Data Creation}
+df <- data.frame(lat = runif(n = 100, min = -90, max = 90), 
+                 lng = runif(n = 100, min = -180, max = +180))
+df %>%  
+  leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(color = "red")
+
+```
